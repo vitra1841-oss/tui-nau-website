@@ -115,14 +115,13 @@ export function Menu() {
   const [active, setActive] = useState('matcha')
   const current = categories.find((c) => c.id === active)!
 
-  // Scroll-triggered animation for tablist & items
+  // Scroll-triggered animation for tablist & grid
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
+    const sts: ScrollTrigger[] = []
     const tablist = document.querySelector('#menu [role="tablist"]')
     const grid = document.querySelector('#menu .menu-grid')
-
-    const sts: ScrollTrigger[] = []
 
     if (tablist) {
       const t = gsap.fromTo(tablist,
@@ -143,6 +142,23 @@ export function Menu() {
     }
 
     return () => sts.forEach((st) => st.kill())
+  }, [])
+
+  // Animate items on tab switch
+  useEffect(() => {
+    document.querySelectorAll('.menu-card-l, .menu-card-r').forEach((el) => {
+      el.classList.remove('menu-card-l', 'menu-card-r')
+      ;(el as HTMLElement).offsetWidth // force reflow
+    })
+
+    const items = document.querySelectorAll('#menu .menu-grid > div')
+    items.forEach((el, i) => {
+      const e = el as HTMLElement
+      e.style.animation = 'none'
+      void e.offsetWidth
+      e.style.animation = ''
+      e.classList.add(i % 2 === 0 ? 'menu-card-l' : 'menu-card-r')
+    })
   }, [active])
 
   return (
@@ -184,9 +200,8 @@ export function Menu() {
           })}
         </div>
 
-        {/* cards — key triggers remount for CSS animation */}
+        {/* cards */}
         <div
-          key={active}
           className="menu-grid mt-8 grid gap-4 sm:mt-12 sm:gap-5 sm:grid-cols-2"
         >
           {current.items.map((item, i) => {
