@@ -56,7 +56,7 @@ export function About() {
               Túi Nâu ra đời từ tình yêu với những hương vị giản dị: một túi trà ủ kỹ, một ly matcha mịn thơm, một khoảnh khắc chậm giữa ngày.
             </p>
             <p>
-              Chúng tôi không có ghế sang hay không gian rộng. Chỉ có đồ uống ngon,
+              Chúng mình không có ghế sang hay không gian rộng. Chỉ có đồ uống ngon,
               làm thủ công mỗi ngày, sẵn sàng đồng hành cùng bạn trên mọi con đường.
             </p>
             <p>

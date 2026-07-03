@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, DM_Sans, Geist_Mono } from 'next/font/google'
+import { Playfair_Display, Montserrat, Geist_Mono } from 'next/font/google'
 import { ScrollProvider } from '../components/scroll-provider'
 import './globals.css'
 
@@ -9,7 +9,7 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   style: ['normal', 'italic'],
 })
-const dmSans = DM_Sans({ variable: '--font-dm-sans', subsets: ['latin'] })
+const montserrat = Montserrat({ variable: '--font-montserrat', subsets: ['latin', 'latin-ext'] })
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`light ${playfair.variable} ${dmSans.variable} ${geistMono.variable}`}
+      className={`light ${playfair.variable} ${montserrat.variable} ${geistMono.variable}`}
     >
       <body className="font-sans antialiased bg-background">
         <ScrollProvider />

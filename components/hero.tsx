@@ -75,7 +75,7 @@ export function Hero() {
         </a>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-cream/50">
+      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center text-[10px] uppercase tracking-[0.3em] text-cream/50">
         Xuống dưới để hiểu thêm về tụi mình
       </div>
     </section>
