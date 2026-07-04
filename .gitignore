@@ -39,3 +39,10 @@ yarn-error.log*
 
 # Dependencies
 .pnpm-store/
+
+# New landing page (work in progress)
+app/new/
+components/new/
+
+# UI skill references
+ui-reference/

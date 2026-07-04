@@ -63,7 +63,7 @@ export function Hero() {
           className="animate-fade-up max-w-sm font-serif text-base italic text-cream/85 text-pretty sm:max-w-md sm:text-lg sm:text-xl"
           style={{ animationDelay: '0.5s' }}
         >
-          {'Một tách trà — một khoảnh khắc chỉ của bạn'}
+          {'"Một tách trà - một khoảnh khắc của riêng bạn"'}
         </p>
 
         <a
@@ -76,7 +76,7 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center text-[10px] uppercase tracking-[0.3em] text-cream/50">
-        Xuống dưới để hiểu thêm về tụi mình
+        Cuộn xuống để hiểu thêm về tụi mình
       </div>
     </section>
   )
